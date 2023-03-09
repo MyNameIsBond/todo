@@ -2,7 +2,8 @@
 import SwiftUI
 
 struct CategoryTodoContainer: View {
-  let items: Instance = .init(items: [Items(checked: false, content: "Milk")], category: "Shopping")
+  @State var items: Instance = .init(items: [Items(checked: false, content: "Milk")], category: "Shopping")
+  
   var body: some View {
     VStack {
       Text(items.category)
