@@ -2,17 +2,13 @@
 import SwiftUI
 
 struct CategoryTodoContainer: View {
-  @ObservedObject var items: Instance = .init(items: [Items(checked: false, content: "Milk"), .init(checked: true, content: "Snacks")], category: "Shopping")
-  
+  @ObservedObject var instance: Instance = .init(items: [Items(checked: false, content: "Milk"), .init(checked: true, content: "Snacks")], category: "Shopping")
+  @State private var ela = false
   var body: some View {
     VStack {
-      Text(items.category)
-      List(items.items) { item in
-        HStack {
-          Toggle(item.content, isOn: item.checked)          
-          Text(item.content).onTapGesture {
-            print(item.checked)
-          }
+      List(instance.items) { item in
+        Toggle(isOn: $instance.items[instance.items.firstIndex(where: { $0.id == item.id })!].checked) {
+          Text(item.content)
         }
       }
     }
