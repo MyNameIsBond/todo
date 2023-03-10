@@ -2,8 +2,6 @@
 import Foundation
 
 
-
-
 class Items: Identifiable, ObservableObject {
   var id: UUID
   @Published var checked: Bool
