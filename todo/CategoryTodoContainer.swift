@@ -2,15 +2,17 @@
 import SwiftUI
 
 struct CategoryTodoContainer: View {
-  @State var items: Instance = .init(items: [Items(checked: false, content: "Milk")], category: "Shopping")
+  @ObservedObject var items: Instance = .init(items: [Items(checked: false, content: "Milk"), .init(checked: true, content: "Snacks")], category: "Shopping")
   
   var body: some View {
     VStack {
       Text(items.category)
       List(items.items) { item in
         HStack {
-          Toggle(item.content, isOn: item.checked)
-          Text(item.content)
+          Toggle(item.content, isOn: item.checked)          
+          Text(item.content).onTapGesture {
+            print(item.checked)
+          }
         }
       }
     }
