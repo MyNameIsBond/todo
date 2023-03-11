@@ -15,16 +15,14 @@ struct CategoryTodoContainer: View {
     }.toolbar {
       ToolbarItem {
         Button("Add") {
-         editing = true
+          editing = true
         }.sheet(isPresented: $editing) {
-          NavigationView {
-            AddView(data: instance)
-              .toolbar {
-                ToolbarItem(placement: .status) {
-                  Text("Add a new to do")
-                }
+          AddView(data: instance)
+            .toolbar {
+              ToolbarItem(placement: .status) {
+                Text("Add a new to do")
               }
-          }
+            }
         }
       }
     }
