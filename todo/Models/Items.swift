@@ -4,7 +4,7 @@ import Foundation
 
 class Items: Identifiable, ObservableObject {
   var id: UUID
-  var checked: Bool
+  @Published var checked: Bool
   var content: String
   var date: Date {
     return Date.now
@@ -25,7 +25,7 @@ class Instance: ObservableObject {
   }
   
   static func setUpItems() -> Instance {
-    return Instance(items: [Items(checked: false, content: "Milk"), .init(checked: true, content: "Snacks")])
+    return Instance(items: [Items(checked: false, content: "Milk"), .init(checked: false, content: "Snacks")])
   }
   
   func deleteItem(_ index: IndexSet) {
@@ -38,6 +38,10 @@ class Instance: ObservableObject {
   
   func addNewItem(_ item: String) {
     items.append(.init(checked: false, content: item))
+  }
+  
+  func tottleChecked(_ item: Items) {
+    item.checked.toggle()
   }
   
 }
