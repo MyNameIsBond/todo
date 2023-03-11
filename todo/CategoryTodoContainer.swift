@@ -2,11 +2,14 @@
 import SwiftUI
 
 struct CategoryTodoContainer: View {
-  @ObservedObject var instance: Instance = .init(items: [Items(checked: false, content: "Milk"), .init(checked: true, content: "Snacks")], category: "Shopping")
-  @State private var ela = false
+  @ObservedObject var instance: Instance = Instance.setUpItems()
   var body: some View {
-      List(instance.items) { item in
+      List {
+        ForEach(instance.items) { item in
           Text(item.content)
+        }.onDelete(perform: instance.deleteItem)
+          .onMove(perform: instance.onMove)
+          
       }
   }
 }

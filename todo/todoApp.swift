@@ -1,9 +1,3 @@
-//
-//  todoApp.swift
-//  todo
-//
-//  Created by Tony Chaidinis on 09/03/2023.
-//
 
 import SwiftUI
 
@@ -11,7 +5,7 @@ import SwiftUI
 struct todoApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Home()
         }
     }
 }

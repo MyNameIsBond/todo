@@ -25,5 +25,18 @@ class Instance: ObservableObject {
     self.items = items
     self.category = category
   }
+  
+  static func setUpItems() -> Instance {
+    return Instance(items: [Items(checked: false, content: "Milk"), .init(checked: true, content: "Snacks")], category: "Shopping")
+  }
+  
+  func deleteItem(_ index: IndexSet) {
+    items.remove(atOffsets: index)
+    print(index)
+  }
+  
+  func onMove(from source:IndexSet, to destination: Int) {
+    items.move(fromOffsets: source, toOffset: destination)
+  }
+  
 }
-
