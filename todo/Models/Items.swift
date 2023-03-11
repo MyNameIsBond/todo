@@ -40,7 +40,7 @@ class Instance: ObservableObject {
     items.append(.init(checked: false, content: item))
   }
   
-  func tottleChecked(_ item: Items) {
+  func toggleChecked(_ item: Items) {
     item.checked.toggle()
   }
   

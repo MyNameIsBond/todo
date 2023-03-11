@@ -4,12 +4,13 @@ import SwiftUI
 struct CategoryTodoContainer: View {
   @ObservedObject var instance: Instance = Instance.setUpItems()
   @State private var  editing: Bool = false
+  @State private var dolor: Bool = false
   
   var body: some View {
     List {
       ForEach(instance.items) { item in
         Text(item.content).onTapGesture {
-          instance.tottleChecked(item)
+          instance.toggleChecked(item)
         }.strikethrough(item.checked, color: .white)
       }.onDelete(perform: instance.deleteItem)
         .onMove(perform: instance.onMove)

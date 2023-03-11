@@ -4,7 +4,7 @@ import SwiftUI
 struct AddView: View {
   
   @State var text: String = ""
-  @ObservedObject var data: Instance
+  @StateObject var data: Instance
   @Environment(\.presentationMode) var presentationMode
   @State private var myAlert: Bool = false
   
