@@ -16,6 +16,7 @@
 		972917C029BA762600173176 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972917BF29BA762600173176 /* Items.swift */; };
 		972917C229BA77DD00173176 /* CategoryTodoContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972917C129BA77DD00173176 /* CategoryTodoContainer.swift */; };
 		972917C429BA77FD00173176 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972917C329BA77FD00173176 /* Home.swift */; };
+		97D931E329BCF33C00AC18F3 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D931E229BCF33C00AC18F3 /* AddView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		972917BF29BA762600173176 /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
 		972917C129BA77DD00173176 /* CategoryTodoContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTodoContainer.swift; sourceTree = "<group>"; };
 		972917C329BA77FD00173176 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		97D931E229BCF33C00AC18F3 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 		97D931E029BCB1B700AC18F3 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				97D931E229BCF33C00AC18F3 /* AddView.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				972917C229BA77DD00173176 /* CategoryTodoContainer.swift in Sources */,
 				972917C429BA77FD00173176 /* Home.swift in Sources */,
 				9729179529BA758000173176 /* todoApp.swift in Sources */,
+				97D931E329BCF33C00AC18F3 /* AddView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

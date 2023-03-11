@@ -4,7 +4,7 @@ import Foundation
 
 class Items: Identifiable, ObservableObject {
   var id: UUID
-  @Published var checked: Bool
+  var checked: Bool
   var content: String
   var date: Date {
     return Date.now
@@ -18,7 +18,7 @@ class Items: Identifiable, ObservableObject {
 }
 
 class Instance: ObservableObject {
-  var items: [Items]
+  @Published var items: [Items]
   var category: String
   
   init(items: [Items], category: String) {
@@ -32,11 +32,14 @@ class Instance: ObservableObject {
   
   func deleteItem(_ index: IndexSet) {
     items.remove(atOffsets: index)
-    print(index)
   }
   
   func onMove(from source:IndexSet, to destination: Int) {
     items.move(fromOffsets: source, toOffset: destination)
+  }
+  
+  func addNewItem(_ item: String) {
+    items.append(.init(checked: false, content: item))
   }
   
 }
