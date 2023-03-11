@@ -19,15 +19,13 @@ class Items: Identifiable, ObservableObject {
 
 class Instance: ObservableObject {
   @Published var items: [Items]
-  var category: String
   
-  init(items: [Items], category: String) {
+  init(items: [Items]) {
     self.items = items
-    self.category = category
   }
   
   static func setUpItems() -> Instance {
-    return Instance(items: [Items(checked: false, content: "Milk"), .init(checked: true, content: "Snacks")], category: "Shopping")
+    return Instance(items: [Items(checked: false, content: "Milk"), .init(checked: true, content: "Snacks")])
   }
   
   func deleteItem(_ index: IndexSet) {
