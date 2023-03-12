@@ -9,9 +9,7 @@ struct CategoryTodoContainer: View {
   var body: some View {
     List {
       ForEach(instance.items) { item in
-        Text(item.content).onTapGesture {
-          instance.toggleChecked(item)
-        }.strikethrough(item.checked, color: .white)
+        Text(item.content)
       }.onDelete(perform: instance.deleteItem)
         .onMove(perform: instance.onMove)
     }.toolbar {
